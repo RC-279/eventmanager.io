@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD with firestore</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h3><center>Event Manager</center></h3>
+    </header>
+    <div class="table-wrapper">
+      <table class="table-users">
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Event Name</th>
+          <th>Details</th>
+          <th>location</th>
+          <th>Event Cordinator</th>
+          <th>Action</th>
+        </tr>
+      </table>
+      <button class="btn btn-add">Add Event</button>
+    </div>
+    <!-- Add Modal -->
+    <div class="add-modal modal-wrapper">
+      <div class="modal">
+        <div class="modal-body">
+          <form class="form" autocomplete="off">
+            <input type="date" name="Date" placeholder="Date">
+            <input type="time" name="time" placeholder="time">
+            <input type="text" name="ename" placeholder="ename">
+            <input type="text" name="details" placeholder="details">
+            <input type="text" name="location" placeholder="location">
+            <input type="text" name="ec" placeholder="ec">
+            <center><button class="btn btn-modal">Submit</button></center>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="edit-modal modal-wrapper">
+      <div class="modal">
+        <div class="modal-body">
+          <form class="form" autocomplete="off">
+            <input type="date" name="Date" placeholder="Date">
+            <input type="time" name="time" placeholder="time">
+            <input type="text" name="ename" placeholder="ename">
+            <input type="text" name="details" placeholder="details">
+            <input type="text" name="location" placeholder="location">
+            <input type="text" name="ec" placeholder="ec">
+            <button class="btn btn-modal">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.21.0/firebase-firestore.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+  apiKey: "AIzaSyDq1s0apxMsxESxCLJXay3piwO117-Kxvg",
+  authDomain: "fgfg-894b1.firebaseapp.com",
+  projectId: "fgfg-894b1",
+  storageBucket: "fgfg-894b1.appspot.com",
+  messagingSenderId: "219681870494",
+  appId: "1:219681870494:web:5d68fffabeaf0443ee218f",
+  measurementId: "G-S31ZTFZ3X5"
+};
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+  </script>
+  <script src="./script.js"></script>
+</body>
+</html>
